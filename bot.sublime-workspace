@@ -1,0 +1,641 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cu",
+				"current_high"
+			],
+			[
+				"cur",
+				"current_high"
+			],
+			[
+				"curre",
+				"current_buy_price"
+			],
+			[
+				"r",
+				"rateLimit"
+			],
+			[
+				"api",
+				"api_call"
+			],
+			[
+				"bot",
+				"bot_token"
+			],
+			[
+				"push",
+				"push_notification"
+			],
+			[
+				"sla",
+				"slack_message"
+			],
+			[
+				"rt",
+				"rtm_connect"
+			],
+			[
+				"ema",
+				"ema3"
+			],
+			[
+				"st",
+				"strat"
+			],
+			[
+				"alp",
+				"alpha_"
+			],
+			[
+				"dp",
+				"dphase_"
+			],
+			[
+				"d",
+				"dphase"
+			],
+			[
+				"set",
+				"set_major_locator"
+			],
+			[
+				"hl",
+				"hl2_"
+			],
+			[
+				"high",
+				"high2"
+			],
+			[
+				"cro",
+				"crossover"
+			],
+			[
+				"cand",
+				"candles"
+			],
+			[
+				"ca",
+				"candles"
+			],
+			[
+				"tim",
+				"my_time"
+			],
+			[
+				"appe",
+				"append_me"
+			],
+			[
+				"cnadle",
+				"candlesticks"
+			],
+			[
+				"da",
+				"data3"
+			],
+			[
+				"dat",
+				"data2"
+			],
+			[
+				"grap",
+				"graphData"
+			],
+			[
+				"account",
+				"accounts"
+			],
+			[
+				"ac",
+				"account"
+			],
+			[
+				"buy",
+				"buy_amount"
+			],
+			[
+				"U",
+				"account_USD"
+			],
+			[
+				"acc",
+				"account_USD"
+			],
+			[
+				"line",
+				"line2"
+			],
+			[
+				"le",
+				"len"
+			],
+			[
+				"m",
+				"my_time"
+			],
+			[
+				"hi",
+				"history"
+			],
+			[
+				"cross",
+				"crossunder"
+			],
+			[
+				"a",
+				"account_ETH"
+			],
+			[
+				"f",
+				"free"
+			],
+			[
+				"c",
+				"candle"
+			],
+			[
+				"i",
+				"item"
+			],
+			[
+				"lis",
+				"list_candle_bull"
+			],
+			[
+				"len",
+				"length_bull"
+			],
+			[
+				"can",
+				"candlesticks"
+			],
+			[
+				"s",
+				"start_time"
+			],
+			[
+				"t",
+				"time"
+			],
+			[
+				"C",
+				"Currency2"
+			],
+			[
+				"b",
+				"bearish"
+			],
+			[
+				"l",
+				"low"
+			],
+			[
+				"h",
+				"high"
+			],
+			[
+				"op",
+				"open_"
+			],
+			[
+				"bear",
+				"bearish"
+			],
+			[
+				"bull",
+				"bull"
+			],
+			[
+				"ta",
+				"talib"
+			],
+			[
+				"til",
+				"talib"
+			],
+			[
+				"cl",
+				"close"
+			],
+			[
+				"de",
+				"developingcandle"
+			],
+			[
+				"ti",
+				"ticks"
+			],
+			[
+				"candle",
+				"candle_info"
+			],
+			[
+				"av",
+				"priceAverage"
+			],
+			[
+				"price",
+				"priceAverage"
+			],
+			[
+				"p",
+				"priceAverage"
+			],
+			[
+				"O",
+				"OppBoard"
+			],
+			[
+				"matr",
+				"matrix"
+			],
+			[
+				"ma",
+				"matrixposition"
+			],
+			[
+				"matrix",
+				"matrixposition"
+			],
+			[
+				"adj",
+				"adj_cell"
+			],
+			[
+				"mat",
+				"matrix"
+			],
+			[
+				"cho",
+				"chooseRandomValidTarget"
+			],
+			[
+				"depl",
+				"deployRandomly"
+			],
+			[
+				"M",
+				"MyBoard"
+			],
+			[
+				"game",
+				"gameState"
+			],
+			[
+				"wr",
+				"writerows"
+			],
+			[
+				"pred",
+				"pred_probs"
+			],
+			[
+				"glmnet",
+				"glmnet_fit"
+			],
+			[
+				"train",
+				"train_set"
+			],
+			[
+				"tr",
+				"truck_data"
+			],
+			[
+				"glm",
+				"glmnet_fit"
+			],
+			[
+				"data",
+				"data_train"
+			],
+			[
+				"error",
+				"error1"
+			],
+			[
+				"er",
+				"error1"
+			],
+			[
+				"svm",
+				"svmfit"
+			],
+			[
+				"fit",
+				"fit3"
+			],
+			[
+				"e",
+				"error"
+			],
+			[
+				"L",
+				"LONGITUDE"
+			],
+			[
+				"re",
+				"require"
+			],
+			[
+				"url",
+				"urlretrieve"
+			],
+			[
+				"file",
+				"filename"
+			],
+			[
+				"work",
+				"worksheet"
+			],
+			[
+				"x",
+				"xlsxwriter"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/TestC++.sublime-build",
+					""
+				],
+				[
+					"Packages/User/TestC++.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/TestC++.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "packa",
+		"selected_items":
+		[
+			[
+				"packa",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"c+",
+				"Build With: C++ Single File - Run"
+			],
+			[
+				"REPL R",
+				"SublimeREPL: R"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Set Syntax: R"
+			]
+		],
+		"width": 412.0
+	},
+	"console":
+	{
+		"height": 453.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/fazzbeast/index.css",
+		"/Users/fazzbeast/index.html",
+		"/Users/fazzbeast/Desktop/botstrat.py",
+		"/Users/fazzbeast/Desktop/HW4_Fabian_Andres_Zourelli.c",
+		"/Users/fazzbeast/Desktop/crypto_bot/test.py",
+		"/Users/fazzbeast/Desktop/bot_attempt.py",
+		"/Users/fazzbeast/Desktop/testbot.py",
+		"/Users/fazzbeast/Desktop/bot.py",
+		"/Users/fazzbeast/Downloads/BAT-DemoClient-Python/def calculateMove(gameState):",
+		"/Users/fazzbeast/Downloads/BAT-DemoClient-Python/def calculateMove(gamestate).py",
+		"/Users/fazzbeast/Downloads/BAT-DemoClient-Python/PDF.py",
+		"/Users/fazzbeast/Downloads/BAT-DemoClient-Python/battle.py",
+		"/Users/fazzbeast/Downloads/BAT-DemoClient-Python/battleships_visuals.py",
+		"/Users/fazzbeast/Downloads/BAT-DemoClient-Python/battleships_move.py",
+		"/Users/fazzbeast/Downloads/BAT-DemoClient-Python/battleships_helper_functions.py",
+		"/Users/fazzbeast/Downloads/BAT-DemoClient-Python/battleships_layout.py",
+		"/Users/fazzbeast/Desktop/def shipPlacementgameState.py",
+		"/Users/fazzbeast/Downloads/xmage/startMageWin7.bat",
+		"/Users/fazzbeast/Downloads/xmage/startMage.bat",
+		"/Users/fazzbeast/Desktop/Drop Shaking/python test/coding_test.py",
+		"/Users/fazzbeast/Downloads/xmage/mage-client/startClient.bat",
+		"/Users/fazzbeast/Desktop/python test/Download.py",
+		"/Users/fazzbeast/Desktop/Drop Shaking/python test/Webcode.py",
+		"/Users/fazzbeast/Desktop/RPI Classes/Space Vehicle Design/Code/pck00010.tpc",
+		"/Users/fazzbeast/Desktop/RPI Classes/Space Vehicle Design/Code/naif0011.tls",
+		"/Users/fazzbeast/Desktop/test.cpp",
+		"/Users/fazzbeast/Library/Application Support/Sublime Text 3/Packages/User/TestC++.sublime-build",
+		"/Users/fazzbeast/Library/Application Support/Sublime Text 3/Packages/C++/C++ Single File.sublime-build",
+		"/Users/fazzbeast/Downloads/Cura-15.04/build_app.py",
+		"/Users/fazzbeast/Desktop/test.py",
+		"/Users/fazzbeast/Desktop/python test/Webcode.py",
+		"/Users/fazzbeast/Desktop/python test/coding_test.py",
+		"/Users/fazzbeast/Desktop/test.R",
+		"/Users/fazzbeast/Library/Application Support/Sublime Text 3/Packages/SublimeREPL/SublimeREPL.sublime-settings",
+		"/Users/fazzbeast/Library/Application Support/Sublime Text 3/Packages/User/SublimeREPL.sublime-settings",
+		"/Users/fazzbeast/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/fazzbeast/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/fazzbeast/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/fazzbeast/Desktop/python test/testing.py"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 211.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 29.0
+	},
+	"pinned_build_system": "Packages/User/TestC++.sublime-build",
+	"project": "bot.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
