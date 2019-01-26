@@ -1,6 +1,6 @@
 
 import matplotlib.pyplot as plt
-from matplotlib.finance import candlestick2_ohlc
+from mpl_finance import candlestick2_ohlc
 import matplotlib.animation as animation
 import matplotlib
 

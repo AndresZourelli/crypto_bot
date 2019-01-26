@@ -2,13 +2,19 @@
 #from testbot import candle_info
 import talib
 import math
+import time
+import csv
+from account import account
 import numpy as np
-from utilities import trading_utilities
+from utlilities import trading_utilities
+from candles import candles_types
 class BotStrategy():
-	utility = trading_utilities()
+	
 	def __init__(self):
-		pass
+		self.utility = trading_utilities()
+		self.account = account()
 
+#----------------------------------------------------Talib indicator functions to be used in strategies found below--------------------------------------------------------
 	def cycle_indicators(self):
 		HT_dom_cycle_period = talib.HT_DCPERIOD(self.close)
 		HT_dom_cycle_phase = talib.HT_DCPHASE(self.close)
@@ -16,7 +22,6 @@ class BotStrategy():
 		sine, leadsine = talib.HT_SINE(self.close)
 		HT_trend_mode = talib.HT_TRENDMODE(self.close)
 		
-
 	def overlap(self):
 		upper, middle, lower = talib.BBANDS(self.close,timeperiod=5,nbdevup=2,nbdevdn=2,matype=0)
 		EMA = talib.EMA(self.close,self.period)
@@ -67,7 +72,6 @@ class BotStrategy():
 		ultosc = talib.ULTOSC(self.high, self.low, self.close, timeperiod1=7, timeperiod2=14, timeperiod3=28)
 		willr = talib.WILLR(self.high, self.low, self.close, timeperiod=14)
 
-
 	def volume(self):
 		ad  = talib.AD(self.high, self.low, self.close, self.volume)
 		adosc = talib.ADOSC(self.high, self.low, self.close, self.volume, fastperiod=3, slowperiod=10)
@@ -84,12 +88,155 @@ class BotStrategy():
 		typprice = talib.TYPPRICE(self.high, self.low, self.close)
 		wclprice = talib.WCLPRICE(self.high, self.low, self.close)
 
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	
+#------------------------------------------------------------------Candle operations to determine coefficient-----------------------------------------------------------------
+	def candlePressure(self, open2,high2,low2,close2):
+		candles_info = candles_types(open2,high2,low2,close2)
+		bull,bear = candles_info.all_candles()
+		candle_pressure = 0
 
+		for i in range(len(bull)):
+			candle_pressure += bull[i]['percent']
 
+		for i in range(len(bear)):
+			candle_pressure += bear[i]['percent']
 
-		
+		if 'three_line_strike' in bull:
+			candle_pressure += 84
 
+		if 'three_line_strike' in bear:
+			candle_pressure += -64
 
+		if 'abandoned_baby' in bull:
+			candle_pressure += 70
 
+		if 'abandoned_baby' in bear:
+			candle_pressure += -69
+
+		if 'belt_hold' in bull:
+			candle_pressure += 71
+
+		if 'belt_hold' in bear:
+			candle_pressure += -68
+
+		if 'breakaway' in bull:
+			candle_pressure += 59
+
+		if 'breakaway' in bear:
+			candle_pressure += -63
+
+		if 'engulfing_pattern' in bull:
+			candle_pressure += 63
+
+		if 'engulfing_pattern' in bear:
+			candle_pressure += -79
+
+		if 'harami_cross_pattern' in bull:
+			candle_pressure += 57
+
+		if 'harami_cross_pattern' in bear:
+			candle_pressure += -55
+
+		if 'kicking' in bull:
+			candle_pressure += 53
+
+		if 'kicking' in bear:
+			candle_pressure += -54
+
+		if 'separating_lines' in bull:
+			candle_pressure += 73
+
+		if 'separating_lines' in bear:
+			candle_pressure += -63
+
+		if 'tristar' in bull:
+			candle_pressure += 60
+
+		if 'tristar' in bear:
+			candle_pressure += -52
+
+		if 'gap_three_methods' in bull:
+			candle_pressure += 62
+
+		if 'gap_three_methods' in bear:
+			candle_pressure += -59
+
+		print("Bull: ", bull)
+		print("Bear: ", bear)
+		return candle_pressure/500
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#-------------------------Trading strategy based on determining what persentage of held assets is preffered in ETC------------------------------------------------------------
+	def idealInvested(self, close, ticks, open2,high2,low2,close2):
+		#determines range looked at to determine percent changed over x minutes
+		x_minutes = 10
+		#determines how many past orders by other traders will effect buy/sell decision
+		x_orders = 10
+
+		#checks account for current holdings
+		balance = 19.72#self.account.total_USD(ticks)
+		inUSD = self.account.balance_USD()
+		inETC = self.account.balance_ETC()
+
+		#determines what effect other traders order will effect buy/sell decision
+		order_pressure = self.account.orderTotal(x_orders)/1000
+
+		#determines what effect current trend will effect buy/sell decision
+		trend_pressure = ((close[49]-close[49-x_minutes])/close[49])*(1/.015)
+
+		#determines what effect candles will effect buy/sell decision
+		candle_pressure = self.candlePressure(open2,high2,low2,close2)
+
+		#determines what effect bolliinger bands will effect buy/sell decision
+		band_pressure = self.bollingerBands(close)
+
+		#coefficient to determine what npercent of total in trade is preferable in ETC
+		coefficient = trend_pressure + order_pressure + candle_pressure + band_pressure
+		if(coefficient>1):
+			coefficient=1
+		if(coefficient<0):
+			coefficient=0
+
+		#ideal USD invested in ETC
+		ideal = coefficient*balance
+		print("Ideal: " + str(ideal))
+
+		#use ideal invested to determine buy/sell action assuring minimum trade is met
+		buy = ideal-inETC*ticks
+		sell = inETC*ticks-ideal
+		if((buy/close[-1])>.1):
+			with open('lists.csv','a') as lists:
+				filewriter = csv.writer(lists,delimiter=',',quotechar='|',quoting=csv.QUOTE_MINIMAL)
+				filewriter.writerow(["B Ideal$" ,ideal, "Total$", balance,
+				 "Price$", close[-1], "Coefficient", coefficient, 'Order Pressure', order_pressure, 'Trend Pressure',
+				  trend_pressure, 'Candle Pressure', candle_pressure, "Band Pressure", band_pressure, "Time", time.time()])
+			#self.account.buyAmount(buy, ticks)
+		elif((sell/close[-1])>.1):
+			with open('lists.csv','a') as lists:
+				filewriter = csv.writer(lists,delimiter=',',quotechar='|',quoting=csv.QUOTE_MINIMAL)
+				filewriter.writerow(["S Ideal$", ideal, "Total$", balance,
+				 "Price$", close[-1], "Coefficient", coefficient, 'Order Pressure', order_pressure, 'Trend Pressure',
+				  trend_pressure, 'Candle Pressure', candle_pressure, "Band Pressure", band_pressure, "Time", time.time()])
+			#self.account.sellAmount(sell, ticks)
+		else:
+			with open('lists.csv','a') as lists:
+				filewriter = csv.writer(lists,delimiter=',',quotechar='|',quoting=csv.QUOTE_MINIMAL)
+				filewriter.writerow(["N Ideal$", ideal, "Total$", balance,
+				 "Price$", close[-1], "Coefficient", coefficient, 'Order Pressure', order_pressure, 'Trend Pressure',
+				  trend_pressure, 'Candle Pressure', candle_pressure, "Band Pressure", band_pressure,"Time", time.time()])
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	def bollingerBands(self, close):
+		close2 = np.array(close,dtype=float)
+		band_pressure = 0
+		up, mid, low = talib.BBANDS(close2, timeperiod=20, nbdevup=2, nbdevdn=2, matype=0)
+		rsi = talib.RSI(close2, timeperiod=14)
+		bbp = (close - low) / (up - low)
+
+		if((rsi[-1] < 30) and (bbp[-1] < 0)):
+			band_pressure = 1
+
+		if((rsi[-1] > 70) and (bbp[-1] > 1)):
+			band_pressure = -1
+		return band_pressure

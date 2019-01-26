@@ -2,7 +2,7 @@
 import ccxt
 import time
 
-class candle_info(object):
+class candle_info():
 
 
 	def __init__ (self,period,opens=None,high=None,low=None,close=None):
